@@ -5,4 +5,4 @@ if [ ! -f assets/package-list.txt ]; then
     exit -1
 fi
 
-dnf install $(cat assets/package-list.txt)
+dnf install -y $(cat assets/package-list.txt)
