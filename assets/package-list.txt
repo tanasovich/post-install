@@ -1,0 +1,11 @@
+arc-theme
+firefox
+thunderbird
+telegram-desktop
+code
+libreoffice
+gimp
+inkscape
+transmission
+vlc
+fira-code-fonts
