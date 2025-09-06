@@ -3,7 +3,7 @@ Version:        0.0
 Release:        1%{?dist}
 Summary:        Setup my workspace after installation
 
-License:        
+License:        MIT
 URL:            
 Source0:        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 Source1:        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm

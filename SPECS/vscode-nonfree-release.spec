@@ -3,7 +3,7 @@ Version:        0.0
 Release:        1%{?dist}
 Summary:        Provides VS Code repository and keys
 
-License:        
+License:        MIT
 URL:            https://code.visualstudio.com
 Source0:        vscode.repo
 Source1:        https://packages.microsoft.com/keys/microsoft.asc
