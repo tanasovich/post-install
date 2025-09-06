@@ -5,4 +5,4 @@ enabled=1
 autorefresh=1
 type=rpm-md
 gpgcheck=1
-gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-vscode-nonfree
