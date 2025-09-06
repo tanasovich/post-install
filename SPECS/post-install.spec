@@ -39,6 +39,14 @@ rpm --install --root=%{buildroot} %{SOURCE1}
 install -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/yum.repos.d/
 install -m 644 %{SOURCE3} %{buildroot}%{_sysconfdir}/yum.repos.d/
 
+%post
+if [ "$1" -eq "1" ] && [ -f "/etc/yum.repos.d/some-repo.repo" ]; then
+    echo "Enabling fedora-cisco-openh264 repository..."
+    sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/fedora-cisco-openh264.repo
+else
+    echo "fedora-cisco-openh264 is not enabled!"
+fi
+
 %files
 /etc/yum.repos.d/rpmfusion-free.repo
 /etc/yum.repos.d/rpmfusion-free-updates.repo
