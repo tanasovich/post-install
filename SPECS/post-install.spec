@@ -9,6 +9,7 @@ Source0:        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release
 Source1:        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 Source2:        vscode.repo
 Source3:        https://download.docker.com/linux/fedora/docker-ce.repo
+Source4:        dnf.conf
 
 BuildRequires:  bash, rpm
 Requires:       dnf-plugins-core
@@ -38,6 +39,10 @@ rpm --install --root=%{buildroot} %{SOURCE1}
 
 install -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/yum.repos.d/
 install -m 644 %{SOURCE3} %{buildroot}%{_sysconfdir}/yum.repos.d/
+
+mkdir -p %{buildroot}%{_sysconfdir}/libdnf5.conf.d
+
+install -D -m 644 %{SOURCE4} %{buildroot}%{_sysconfdir}/libdnf5.conf.d/20-user-settings.conf
 
 %post
 if [ "$1" -eq "1" ] && [ -f "/etc/yum.repos.d/some-repo.repo" ]; then
