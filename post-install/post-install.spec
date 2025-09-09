@@ -43,7 +43,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/libdnf5.conf.d
 install -D -m 644 %{SOURCE3} %{buildroot}%{_sysconfdir}/libdnf5.conf.d/20-user-settings.conf
 
 %post
-if [ "$1" -eq "1" ] && [ -f "/etc/yum.repos.d/some-repo.repo" ]; then
+if [ "$1" -eq "1" ] && [ -f "/etc/yum.repos.d/fedora-cisco-openh264.repo" ]; then
     echo "Enabling fedora-cisco-openh264 repository..."
     sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/fedora-cisco-openh264.repo
 else
