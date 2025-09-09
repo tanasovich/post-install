@@ -7,11 +7,10 @@ License:        MIT
 URL:            
 Source0:        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 Source1:        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-Source2:        https://download.docker.com/linux/fedora/docker-ce.repo
-Source3:        dnf.conf
+Source2:        dnf.conf
 
 BuildRequires:  bash, rpm, rpkg
-Requires:       dnf-plugins-core, vscode-nonfree-release
+Requires:       dnf-plugins-core, vscode-nonfree-release, docker-ce-free-release
 Recommends:     arc-theme, fira-code-fonts
 Recommends:     firefox, thunderbird, telegram-desktop, transmission
 Recommends:     code
@@ -36,11 +35,9 @@ mkdir -p %{buildroot}%{_sysconfdir}/pki/rpm-gpg
 rpm --install --root=%{buildroot} %{SOURCE0}
 rpm --install --root=%{buildroot} %{SOURCE1}
 
-install -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/yum.repos.d/
-
 mkdir -p %{buildroot}%{_sysconfdir}/libdnf5.conf.d
 
-install -D -m 644 %{SOURCE3} %{buildroot}%{_sysconfdir}/libdnf5.conf.d/20-user-settings.conf
+install -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/libdnf5.conf.d/20-user-settings.conf
 
 %post
 if [ "$1" -eq "1" ] && [ -f "/etc/yum.repos.d/fedora-cisco-openh264.repo" ]; then
@@ -59,7 +56,6 @@ fi
 /etc/yum.repos.d/rpmfusion-nonfree-updates.repo
 /etc/yum.repos.d/rpmfusion-nonfree-updates-testing.repo
 /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-$(rpm -E %fedora)
-/etc/yum.repos.d/docker-ce.repo
 %license
 %doc
 
