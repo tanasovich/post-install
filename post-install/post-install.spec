@@ -11,8 +11,8 @@ Source2:        vscode.repo
 Source3:        https://download.docker.com/linux/fedora/docker-ce.repo
 Source4:        dnf.conf
 
-BuildRequires:  bash, rpm
-Requires:       dnf-plugins-core
+BuildRequires:  bash, rpm, rpkg
+Requires:       dnf-plugins-core, 
 Recommends:     arc-theme, fira-code-fonts
 Recommends:     firefox, thunderbird, telegram-desktop, transmission
 Recommends:     code
