@@ -11,7 +11,7 @@ Source2:        https://download.docker.com/linux/fedora/docker-ce.repo
 Source3:        dnf.conf
 
 BuildRequires:  bash, rpm, rpkg
-Requires:       dnf-plugins-core, 
+Requires:       dnf-plugins-core
 Recommends:     arc-theme, fira-code-fonts
 Recommends:     firefox, thunderbird, telegram-desktop, transmission
 Recommends:     code
