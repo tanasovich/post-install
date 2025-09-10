@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Setup my workspace after installation
 
 License:        MIT
-URL:            
+URL:            https://copr.fedorainfracloud.org/coprs/tanasovich/post-install
 Source0:        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 Source1:        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 Source2:        dnf.conf
