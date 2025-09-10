@@ -39,7 +39,7 @@ rpm2cpio %{buildroot}/tmp/rpmfusion-nonfree-release.rpm | cpio -idv --quiet
 
 mkdir -p %{buildroot}%{_sysconfdir}/libdnf5.conf.d
 
-install -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/libdnf5.conf.d/20-user-settings.conf
+install -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/dnf/libdnf5.conf.d/20-user-settings.conf
 
 %post
 if [ "$1" -eq "1" ] && [ -f "/etc/yum.repos.d/fedora-cisco-openh264.repo" ]; then
@@ -69,6 +69,7 @@ fi
 /etc/yum.repos.d/rpmfusion-nonfree-updates.repo
 /etc/yum.repos.d/rpmfusion-nonfree-updates-testing.repo
 /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-%{fedora}
+/etc/dnf/libdnf5.conf.d/20-user-settings.conf
 %license
 %doc
 
