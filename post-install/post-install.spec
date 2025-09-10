@@ -53,7 +53,18 @@ fi
 /etc/yum.repos.d/rpmfusion-free.repo
 /etc/yum.repos.d/rpmfusion-free-updates.repo
 /etc/yum.repos.d/rpmfusion-free-updates-testing.repo
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-2020
 /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-%{fedora}
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-%{eval:%{fedora} + 1}
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-%{eval:%{fedora} + 2}
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-latest
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-rawhide
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-%{fedora}
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-%{eval:%{fedora} + 1}
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-%{eval:%{fedora} + 2}
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-latest
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-rawhide
 /etc/yum.repos.d/rpmfusion-nonfree.repo
 /etc/yum.repos.d/rpmfusion-nonfree-updates.repo
 /etc/yum.repos.d/rpmfusion-nonfree-updates-testing.repo
