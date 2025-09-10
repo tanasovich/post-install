@@ -5,8 +5,8 @@ Summary:        Setup my workspace after installation
 
 License:        MIT
 URL:            https://copr.fedorainfracloud.org/coprs/tanasovich/post-install
-Source0:        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-%{fedora}.noarch.rpm
-Source1:        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%{fedora}.noarch.rpm
+Source0:        https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-%{fedora}.noarch.rpm
+Source1:        https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%{fedora}.noarch.rpm
 Source2:        dnf.conf
 
 Requires:       dnf-plugins-core, vscode-nonfree-release, docker-ce-free-release
@@ -30,6 +30,7 @@ Automating routing post-installation configuration process.
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/yum.repos.d
 mkdir -p %{buildroot}%{_sysconfdir}/pki/rpm-gpg
+mkdir -p %{buildroot}/tmp
 
 install -D -m 644 %{SOURCE0} %{buildroot}/tmp/rpmfusion-free-release.rpm
 install -D -m 644 %{SOURCE1} %{buildroot}/tmp/rpmfusion-nonfree-release.rpm
@@ -37,7 +38,7 @@ install -D -m 644 %{SOURCE1} %{buildroot}/tmp/rpmfusion-nonfree-release.rpm
 rpm2cpio %{buildroot}/tmp/rpmfusion-free-release.rpm | cpio -idv --quiet
 rpm2cpio %{buildroot}/tmp/rpmfusion-nonfree-release.rpm | cpio -idv --quiet
 
-mkdir -p %{buildroot}%{_sysconfdir}/libdnf5.conf.d
+mkdir -p %{buildroot}%{_sysconfdir}/dnf/libdnf5.conf.d
 
 install -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/dnf/libdnf5.conf.d/20-user-settings.conf
 
