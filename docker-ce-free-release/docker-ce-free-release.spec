@@ -7,9 +7,6 @@ License:        Apache License 2.0
 URL:            https://www.docker.com
 Source0:        https://download.docker.com/linux/fedora/docker-ce.repo
 
-BuildRequires:  
-Requires:       
-
 %description
 
 
