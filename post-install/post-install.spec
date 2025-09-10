@@ -5,8 +5,8 @@ Summary:        Setup my workspace after installation
 
 License:        MIT
 URL:            https://copr.fedorainfracloud.org/coprs/tanasovich/post-install
-Source0:        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-Source1:        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+Source0:        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-%{fedora}.noarch.rpm
+Source1:        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%{fedora}.noarch.rpm
 Source2:        dnf.conf
 
 Requires:       dnf-plugins-core, vscode-nonfree-release, docker-ce-free-release
@@ -50,11 +50,11 @@ fi
 /etc/yum.repos.d/rpmfusion-free.repo
 /etc/yum.repos.d/rpmfusion-free-updates.repo
 /etc/yum.repos.d/rpmfusion-free-updates-testing.repo
-/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$(rpm -E %fedora)
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-%{fedora}
 /etc/yum.repos.d/rpmfusion-nonfree.repo
 /etc/yum.repos.d/rpmfusion-nonfree-updates.repo
 /etc/yum.repos.d/rpmfusion-nonfree-updates-testing.repo
-/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-$(rpm -E %fedora)
+/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-%{fedora}
 %license
 %doc
 
