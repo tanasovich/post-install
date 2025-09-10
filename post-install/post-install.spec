@@ -9,7 +9,6 @@ Source0:        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release
 Source1:        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 Source2:        dnf.conf
 
-BuildRequires:  bash, rpm, rpkg
 Requires:       dnf-plugins-core, vscode-nonfree-release, docker-ce-free-release
 Recommends:     arc-theme, fira-code-fonts
 Recommends:     firefox, thunderbird, telegram-desktop, transmission
