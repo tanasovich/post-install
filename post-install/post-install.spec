@@ -31,8 +31,11 @@ Automating routing post-installation configuration process.
 mkdir -p %{buildroot}%{_sysconfdir}/yum.repos.d
 mkdir -p %{buildroot}%{_sysconfdir}/pki/rpm-gpg
 
-rpm --install --root=%{buildroot} %{SOURCE0}
-rpm --install --root=%{buildroot} %{SOURCE1}
+install -D -m 644 %{SOURCE0} %{buildroot}/tmp/rpmfusion-free-release.rpm
+install -D -m 644 %{SOURCE1} %{buildroot}/tmp/rpmfusion-nonfree-release.rpm
+
+rpm2cpio %{buildroot}/tmp/rpmfusion-free-release.rpm | cpio -idv --quiet
+rpm2cpio %{buildroot}/tmp/rpmfusion-nonfree-release.rpm | cpio -idv --quiet
 
 mkdir -p %{buildroot}%{_sysconfdir}/libdnf5.conf.d
 
