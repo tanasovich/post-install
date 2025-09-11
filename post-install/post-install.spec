@@ -29,14 +29,6 @@ Automating routing post-installation configuration process.
 
 
 %install
-mkdir -p %{buildroot}%{_sysconfdir}/yum.repos.d
-mkdir -p %{buildroot}%{_sysconfdir}/pki/rpm-gpg
-mkdir -p %{buildroot}/tmp
-
-install -D -m 644 %{SOURCE0} %{buildroot}/tmp/rpmfusion-nonfree-release.rpm
-
-rpm2cpio %{buildroot}/tmp/rpmfusion-nonfree-release.rpm | cpio -idv --quiet
-
 mkdir -p %{buildroot}%{_sysconfdir}/dnf/libdnf5.conf.d
 
 install -D -m 644 %{SOURCE1} %{buildroot}%{_sysconfdir}/dnf/libdnf5.conf.d/20-user-settings.conf
@@ -50,16 +42,6 @@ else
 fi
 
 %files
-/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
-/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-%{fedora}
-/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-%{eval:%{fedora} + 1}
-/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-%{eval:%{fedora} + 2}
-/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-latest
-/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-rawhide
-/etc/yum.repos.d/rpmfusion-nonfree.repo
-/etc/yum.repos.d/rpmfusion-nonfree-updates.repo
-/etc/yum.repos.d/rpmfusion-nonfree-updates-testing.repo
-/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-%{fedora}
 /etc/dnf/libdnf5.conf.d/20-user-settings.conf
 %license
 %doc
