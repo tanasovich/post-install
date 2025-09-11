@@ -8,7 +8,9 @@ URL:            https://copr.fedorainfracloud.org/coprs/tanasovich/post-install
 Source0:        https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%{fedora}.noarch.rpm
 Source1:        dnf.conf
 
-Requires:       dnf-plugins-core, vscode-nonfree-release, docker-ce-free-release, rpmfusion-free-release, rpmfusion-nonfree-release
+Requires:       dnf-plugins-core
+Requires:       vscode-nonfree-release, docker-ce-free-release
+Requires:       rpmfusion-free-release, rpmfusion-nonfree-release
 Recommends:     arc-theme, fira-code-fonts
 Recommends:     firefox, thunderbird, telegram-desktop, transmission
 Recommends:     code
