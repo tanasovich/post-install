@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ ! -z "$1"]; then
+set -euo pipefail
+
+if [ -z "${1:-}" ]; then
     echo "Git repo URL is mandatory!"
     exit -1
 fi
