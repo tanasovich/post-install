@@ -11,7 +11,7 @@ Source1:        dnf.conf
 Requires:       dnf-plugins-core
 Requires:       vscode-nonfree-release, docker-ce-free-release
 Requires:       rpmfusion-free-release, rpmfusion-nonfree-release
-Recommends:     arc-theme, fira-code-fonts
+Recommends:     arc-theme, fira-code-fonts, julietaula-montserrat-fonts
 Recommends:     firefox, thunderbird, telegram-desktop, transmission
 Recommends:     code
 Recommends:     libreoffice
