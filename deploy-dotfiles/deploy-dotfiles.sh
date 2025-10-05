@@ -22,3 +22,8 @@ EOF
 echo ".dotfiles" >> $HOME/.gitignore
 
 git clone --bare $1 $HOME/.dotfiles
+
+# If some work-tree content conflicts with index, git would ignore this
+# and rewrite conflict data by index content.
+
+dotfiler checkout --force master
